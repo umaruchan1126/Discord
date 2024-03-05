@@ -24,13 +24,13 @@ client.on('ready', async () => {
 
   const r = new Discord.RichPresence()
     .setApplicationId('1159457353029140521')
-    .setType('PLAYING')
+    .setType('ONLINE')
     .setURL('https://www.twitch.tv/thirstymonster') //Must be a youtube video link 
     .setState('している')
     .setName('ㅤ')
     .setDetails(`Programming 👋⚓ [${formatTime()}]`)
     .setStartTimestamp(Date.now())
-    .setAssetsLargeImage('https://cdn.discordapp.com/attachments/1060830136414519336/1180670570862485645/1_-KlOGKrl0EJsPWncAZ6FiQ.gif?ex=657e4427&is=656bcf27&hm=a2790965a4ba7508f6dc7e39a92634737dc7621e125bd743eb670fd3773af919&') //You can put links in tenor or discord and etc.
+    .setAssetsLargeImage('https://cdn.discordapp.com/attachments/1060830136414519336/1180670570862485645/1_-KlOGKrl0EJsPWncAZ6FiQ.gif?ex=65f63ca7&is=65e3c7a7&hm=d9102f1cbd2ebda861df7f811a85467d423fb2eec09288d13dd8a63927d82f87&') //You can put links in tenor or discord and etc.
 
     .setAssetsSmallImage('https://cdn.discordapp.com/emojis/731154864360390726.gif?size=96&quality=lossless') //You can put links in tenor or discord and etc.
 
