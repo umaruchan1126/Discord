@@ -20,20 +20,22 @@ function formatTime() { //Credits to himika#0001 and never#0001
 
 client.on('ready', async () => {
   console.clear();
-  console.log(`${client.user.tag} - rpc started! check your profile ^^`);
+  console.log(`${client.user.tag} - rich presence started!`);
 
   const r = new Discord.RichPresence()
     .setApplicationId('1159457353029140521')
     .setType('STREAMING')
-    .setURL('https://www.twitch.tv/imaginationxtv') //Must be a youtube video link 
+    .setURL('https://www.twitch.tv/thirstymonster') //Must be a youtube video link 
     .setState('している')
-    .setName('randomness')
-    .setDetails(`Hey 👋⚓ [${formatTime()}]`)
+    .setName('ㅤ')
+    .setDetails(`Programming 👋⚓ [${formatTime()}]`)
     .setStartTimestamp(Date.now())
- .setAssetsLargeImage('https://media.discordapp.net/attachments/1060830136414519336/1180670570862485645/1_-KlOGKrl0EJsPWncAZ6FiQ.gif?ex=65f63ca7&is=65e3c7a7&hm=d9102f1cbd2ebda861df7f811a85467d423fb2eec09288d13dd8a63927d82f87&=&width=570&height=321') //You can put links in tenor or discord and etc.
-    .setAssetsLargeText('Random Thoughts') //Text when you hover the Large image
-    .setAssetsSmallImage('https://discord.com/channels/740833438352932916/1060830136414519336/1214379914552414279') //You can put links in tenor or discord and etc.
-    .setAssetsSmallText('You weirdo, why would you hover over the small image.') //Text when you hover the Small image
+    .setAssetsLargeImage('https://cdn.discordapp.com/attachments/1060830136414519336/1180670570862485645/1_-KlOGKrl0EJsPWncAZ6FiQ.gif?ex=657e4427&is=656bcf27&hm=a2790965a4ba7508f6dc7e39a92634737dc7621e125bd743eb670fd3773af919&') //You can put links in tenor or discord and etc.
+
+    .setAssetsSmallImage('https://cdn.discordapp.com/emojis/731154864360390726.gif?size=96&quality=lossless') //You can put links in tenor or discord and etc.
+
+    .addButton('DM', 'https://discord.gg/m1sery')
+    .addButton('ONLY FANS', 'https://www.youtube.com/watch?v=2xx_2XNxxfA');
 
   client.user.setActivity(r);
   client.user.setPresence({ status: "dnd" }); //dnd, online, idle, offline
@@ -42,7 +44,7 @@ client.on('ready', async () => {
   setInterval(() => {
     const newTime = formatTime();
     if (newTime !== prevTime) {
-      const newDetails = `Hey 👋⚓ [${newTime}]`;
+      const newDetails = `Programming 👋⚓ [${newTime}]`;
       r.setDetails(newDetails);
       client.user.setActivity(r);
       prevTime = newTime;
