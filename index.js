@@ -27,7 +27,7 @@ client.on('ready', async () => {
     .setType('PLAYING')
     .setURL('https://www.twitch.tv/thirstymonster') //Must be a youtube video link 
     .setState('している')
-    .setName('ㅤ')
+    .setName('Programming')
     .setDetails(`Programming 👋⚓ [${formatTime()}]`)
     .setStartTimestamp(Date.now())
     .setAssetsLargeImage('https://cdn.discordapp.com/attachments/1060830136414519336/1180670570862485645/1_-KlOGKrl0EJsPWncAZ6FiQ.gif?ex=65f63ca7&is=65e3c7a7&hm=d9102f1cbd2ebda861df7f811a85467d423fb2eec09288d13dd8a63927d82f87&') //You can put links in tenor or discord and etc.
