@@ -30,7 +30,7 @@ client.on('ready', async () => {
     .setName('ㅤ')
     .setDetails(`Programming 👋⚓ [${formatTime()}]`)
     .setStartTimestamp(Date.now())
-    .setAssetsLargeImage('https://cdn.discordapp.com/attachments/1060830136414519336/1180670570862485645/1_-KlOGKrl0EJsPWncAZ6FiQ.gif?ex=657e4427&is=656bcf27&hm=a2790965a4ba7508f6dc7e39a92634737dc7621e125bd743eb670fd3773af919&') //You can put links in tenor or discord and etc.
+    .setAssetsLargeImage('https://discord.com/channels/740833438352932916/1060830136414519336/1180670571281907842') //You can put links in tenor or discord and etc.
 
     .setAssetsSmallImage('https://cdn.discordapp.com/emojis/731154864360390726.gif?size=96&quality=lossless') //You can put links in tenor or discord and etc.
 
