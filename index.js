@@ -27,15 +27,13 @@ client.on('ready', async () => {
     .setType('ONLINE')
     .setURL('https://www.twitch.tv/imaginationxtv') //Must be a youtube video link 
     .setState('している')
-    .setName('ㅤ')
+    .setName('randomness')
     .setDetails(`Hey 👋⚓ [${formatTime()}]`)
     .setStartTimestamp(Date.now())
-    .setAssetsLargeImage('67db61ce7e450176f276f32b6ce47017.gif') //You can put links in tenor or discord and etc.
-
-    .setAssetsSmallImage('https://cdn.discordapp.com/emojis/731154864360390726.gif?size=96&quality=lossless') //You can put links in tenor or discord and etc.
-
-    .addButton('DM', 'https://discord.gg/m1sery')
-    .addButton('ONLY FANS', 'https://www.youtube.com/watch?v=2xx_2XNxxfA');
+ .setAssetsLargeImage('https://media.discordapp.net/attachments/1060830136414519336/1180670570862485645/1_-KlOGKrl0EJsPWncAZ6FiQ.gif?ex=65f63ca7&is=65e3c7a7&hm=d9102f1cbd2ebda861df7f811a85467d423fb2eec09288d13dd8a63927d82f87&=&width=570&height=321') //You can put links in tenor or discord and etc.
+    .setAssetsLargeText('Random Thoughts') //Text when you hover the Large image
+    .setAssetsSmallImage('https://discord.com/channels/740833438352932916/1060830136414519336/1214379914552414279') //You can put links in tenor or discord and etc.
+    .setAssetsSmallText('You weirdo, why would you hover over the small image.') //Text when you hover the Small image
 
   client.user.setActivity(r);
   client.user.setPresence({ status: "dnd" }); //dnd, online, idle, offline
