@@ -24,7 +24,7 @@ client.on('ready', async () => {
 
   const r = new Discord.RichPresence()
     .setApplicationId('1159457353029140521')
-    .setType('ONLINE')
+    .setType('STREAMING')
     .setURL('https://www.twitch.tv/imaginationxtv') //Must be a youtube video link 
     .setState('している')
     .setName('randomness')
