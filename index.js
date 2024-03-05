@@ -20,7 +20,7 @@ function formatTime() { //Credits to himika#0001 and never#0001
 
 client.on('ready', async () => {
   console.clear();
-  console.log(${client.user.tag} - rich presence started!);
+  console.log(`${client.user.tag} - rpc started! check your profile ^^`);
 
   const r = new Discord.RichPresence()
     .setApplicationId('1159457353029140521')
