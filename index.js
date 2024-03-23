@@ -133,7 +133,7 @@ bot.on('ready', async () => {
       .setName(`CRAMMING`)
       .setURL('https://www.twitch.tv/sachihirokun')
       .setType(`${type}`.toUpperCase())
-      .setApplicationId("1159127696064905256")
+      .setApplicationId("1159457353029140521")
       .setAssetsLargeImage(`${rdpictureGede}`)
       .setAssetsSmallImage(`${rdsmallpictureGede}`)
       .setAssetsLargeText(`
