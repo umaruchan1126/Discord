@@ -1,56 +1,153 @@
-const Discord = require('discord.js-selfbot-v13');
-const client = new Discord.Client({
-  readyStatus: false,
-  checkUpdate: false
-});
+const { Client, RichPresence } = require('discord.js-selfbot-v13');
+const express = require('express');
+const app = express();
+const bot = new Client({ checkUpdate: false });
 
-const keepAlive = require('./server.js');
-keepAlive();
 
-function formatTime() { //Credits to himika#0001 and never#0001
-  const date = new Date();
-  const options = {
-    timeZone: 'Asia/Manila', //https://www.zeitverschiebung.net/en/ and find your city and enter here
-    hour12: true,
-    hour: 'numeric',
-    minute: 'numeric'
-  };
-  return new Intl.DateTimeFormat('en-US', options).format(date);
+const textmain = "";
+const textthree = "";
+const textfour = "";
+const type = "STREAMING";
+const pictureGede = [
+"https://tenor.com/view/nice-hamatora-anime-anime-boy-music-gif-14625260",
+  
+                         ];
+const smallpictureGede = [
+  "https://cdn.discordapp.com/emojis/966116896405606420.gif?size=96&quality=lossless",
+  
+                    ];
+const nameButtonone = "";
+let linkButtonone = "";
+
+const xxxx = ['The Shining Shimering Splendid'];
+
+const randomTexts = [
+  'Come Talk to me'
+
+
+];
+
+const randomtext3 = [
+  '𝓣𝓱𝓮 𝓢𝓽𝓸𝓻𝔂 𝓸𝓯 𝓤𝓼',
+  '𝓣𝓱𝓲𝓼 𝓲𝓼 𝓵𝓸𝓸𝓴𝓲𝓷𝓰 𝓵𝓲𝓴𝓮 𝓪 𝓬𝓸𝓷𝓽𝓮𝓼𝓽',
+  '𝓞𝓯 𝔀𝓱𝓸 𝓬𝓪𝓷 𝓪𝓬𝓽 𝓵𝓲𝓴𝓮 𝓽𝓱𝓮𝔂 𝓬𝓪𝓻𝓮 𝓵𝓮𝓼𝓼',
+  '𝓑𝓾𝓽 𝓘 𝓵𝓲𝓴𝓮𝓭 𝓲𝓽 𝓫𝓮𝓽𝓽𝓮𝓻 𝔀𝓱𝓮𝓷 𝔂𝓸𝓾 𝔀𝓮𝓻𝓮 𝓸𝓷 𝓶𝔂 𝓼𝓲𝓭𝓮',
+  '𝓣𝓱𝓮 𝓫𝓪𝓽𝓽𝓵𝓮'𝓼 𝓲𝓷 𝔂𝓸𝓾𝓻 𝓱𝓪𝓷𝓭𝓼 𝓷𝓸𝔀',
+  '𝓑𝓾𝓽 𝓘 𝔀𝓸𝓾𝓵𝓭 𝓵𝓪𝔂 𝓶𝔂 𝓪𝓻𝓶𝓸𝓻 𝓭𝓸𝔀𝓷',
+  '𝓘𝓯 𝔂𝓸𝓾 𝓼𝓪𝔂 𝔂𝓸𝓾'𝓭 𝓻𝓪𝓽𝓱𝓮𝓻 𝓵𝓸𝓿𝓮 𝓽𝓱𝓪𝓷 𝓯𝓲𝓰𝓱𝓽',
+  '𝓢𝓸 𝓶𝓪𝓷𝔂 𝓽𝓱𝓲𝓷𝓰𝓼 𝓽𝓱𝓪𝓽 𝔂𝓸𝓾 𝔀𝓲𝓼𝓱 𝓘 𝓴𝓷𝓮𝔀,
+  '𝓑𝓾𝓽 𝓽𝓱𝓮 𝓼𝓽𝓸𝓻𝔂 𝓸𝓯 𝓾𝓼 𝓶𝓲𝓰𝓱𝓽 𝓫𝓮 𝓮𝓷𝓭𝓲𝓷𝓰 𝓼𝓸𝓸𝓷',
+
+
+];
+
+const randomtext4 = [
+  '★☆★☆★☆★', '☆★☆★☆★☆'
+
+
+];
+
+const randomtext5 = [];
+
+const randomLinks = [
+  "https://www.twitch.tv/sachihirokun",
+];
+
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-client.on('ready', async () => {
-  console.clear();
-  console.log(`${client.user.tag} - rich presence started!`);
+function getRandomElement(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+function getTimestampsForDay(year, month, day) {
+  const date = new Date(Date.UTC(year, month, day));
+  date.setHours(date.getHours() + 7);
+  date.setUTCHours(0, 0, 0, 0);
+  const timestampMidnight = date.getTime();
+  date.setUTCHours(0, 0, 0, 0);
+  const timestampEndOfDay = date.getTime();
 
-  const r = new Discord.RichPresence()
-    .setApplicationId('1159457353029140521')
-    .setType('STREAMING')
-    .setURL('https://www.twitch.tv/thirstymonster') //Must be a youtube video link 
-    .setState('している')
-    .setName('Programming')
-    .setDetails(`Programming 👋⚓ [${formatTime()}]`)
-    .setStartTimestamp(Date.now())
-    .setAssetsLargeImage('https://cdn.discordapp.com/attachments/740833438352932920/1216583853481660446/hamster-kiss.png?ex=6600eb01&is=65ee7601&hm=07f10929fe7873d914f164783cdf7e3629b0bb9b3883d10b7c6d9bc03de6636d&') //You can put links in tenor or discord and etc.
+  return {
+    timestampMidnight,
+    timestampEndOfDay
+  };
+}
 
-    .setAssetsSmallImage('https://cdn.discordapp.com/emojis/731154864360390726.gif?size=96&quality=lossless') //You can put links in tenor or discord and etc.
 
-    .addButton('DM', 'https://discord.gg/m1sery')
-    .addButton('ONLY FANS', 'https://www.youtube.com/watch?v=2xx_2XNxxfA');
 
-  client.user.setActivity(r);
-  client.user.setPresence({ status: "dnd" }); //dnd, online, idle, offline
-
-  let prevTime = null;
-  setInterval(() => {
-    const newTime = formatTime();
-    if (newTime !== prevTime) {
-      const newDetails = `Programming 👋⚓ [${newTime}]`;
-      r.setDetails(newDetails);
-      client.user.setActivity(r);
-      prevTime = newTime;
-    }
-  }, 1000); // Update every second
+app.all('/', (req, res) => {
+  res.send("NOW GO TO uptimerobot.com AND PASTE THIS URL");
 });
 
-const mySecret = process.env['TOKEN'];
-client.login(mySecret);
+app.listen(8080, () => {
+  console.log("Server is ready!!");
+});
+
+bot.on('debug', (a) => {
+  if (a.startsWith("Hit a 429")) process.kill(1);
+});
+
+bot.on('ready', async () => {
+  setInterval(() => {
+    const date = new Date();
+    const datee = date.getDate();
+    const hours = (date.getHours() + 7) % 24;
+    const minutes = date.getMinutes();
+    const months = date.getMonth();
+    const year = date.getFullYear();
+    const timestamps = getTimestampsForDay(year, months, datee);
+    function addZero(number) {
+  return number < 10 ? "0" + number : number;
+}
+
+  function getRandomNumber() {
+    return Math.random() * (30 - 20) + 20;
+  }
+  function getWRandomNumber() {
+    return Math.random() * (5 - 3) + 3;
+  }
+  function roundToDecimal(number) {
+    return Math.round(number * 10) / 10;
+  }
+
+  const randomNumber = getRandomNumber();
+  const roundedNumber = roundToDecimal(randomNumber);
+  const roundwNumber = roundToDecimal(getWRandomNumber());
+    const month = addZero(months+1);
+    const dates = addZero(datee)
+    const resultthree = "Badminton"
+
+
+    // Randomize the link and text for the button
+    randomXX = getRandomElement(xxxx);
+    rdpictureGede = getRandomElement(pictureGede);
+    rdsmallpictureGede = getRandomElement(smallpictureGede);
+    const randomButtonText = getRandomElement(randomTexts);
+    const randomButtonText3 = getRandomElement(randomtext3);
+    const randomButtonText4 = getRandomElement(randomtext4);
+    const randomButtonText5 = getRandomElement(randomtext5);
+    linkButtonone = getRandomElement(randomLinks);
+    const pr = new RichPresence()  
+      .setName(`CRAMMING`)
+      .setURL('https://www.twitch.tv/sachihirokun')
+      .setType(`${type}`.toUpperCase())
+      .setApplicationId("1159127696064905256")
+      .setAssetsLargeImage(`${rdpictureGede}`)
+      .setAssetsSmallImage(`${rdsmallpictureGede}`)
+      .setAssetsLargeText(`
+🌡${roundedNumber} °C ⋆ 🍃 ${roundwNumber} m/s`)
+      .setAssetsSmallText(`ping: ${bot.ws.ping}ms`)
+      .setState(`: ${randomXX}`)
+      .setDetails(`${randomButtonText3}`)
+      .setStartTimestamp(timestamps.timestampMidnight)
+      .setEndTimestamp(timestamps.timestampEndOfDay)
+      .addButton(`${randomButtonText}`, `${linkButtonone}`)
+      .addButton(`${randomButtonText4}`, `${linkButtonone}`)
+    bot.user.setActivity(pr.toJSON());
+  }, getRandomInt(1000, 3000));
+  console.log(`${bot.user.tag} Status is showed up !!`);
+});
+
+bot.login(process.env['TOKEN']);
