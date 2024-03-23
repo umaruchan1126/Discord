@@ -9,7 +9,7 @@ const textthree = "";
 const textfour = "";
 const type = "STREAMING";
 const pictureGede = [
-"https://tenor.com/view/nice-hamatora-anime-anime-boy-music-gif-14625260",
+"https://media.discordapp.net/attachments/1221090089514434620/1221097207080423585/nice-hamatora.gif?ex=66115665&is=65fee165&hm=fd31772d1c8512bee29195bc8683bed0cbadb0f8c865e9e7e91902cfcde639e8&=",
   
                          ];
 const smallpictureGede = [
