@@ -19,17 +19,16 @@ const smallpictureGede = [
 const nameButtonone = "";
 let linkButtonone = "";
 
-const xxxx = ['The Shining Shimering Splendid'];
+const xxxx = ['The Story of Us (Taylor Swift)'];
 
 const randomTexts = [
-  'Come Talk to me'
+  '🖤🤍Come Talk to me🖤🤍'
 
 
 ];
 
 const randomtext3 = [
   
-  '𝓣𝓱𝓮 𝓢𝓽𝓸𝓻𝔂 𝓸𝓯 𝓤𝓼',
   '𝓣𝓱𝓲𝓼 𝓲𝓼 𝓵𝓸𝓸𝓴𝓲𝓷𝓰',
   '𝓵𝓲𝓴𝓮 𝓪 𝓬𝓸𝓷𝓽𝓮𝓼𝓽',
   '𝓞𝓯 𝔀𝓱𝓸 𝓬𝓪𝓷 𝓪𝓬𝓽',
