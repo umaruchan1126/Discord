@@ -13,7 +13,7 @@ const pictureGede = [
   
                          ];
 const smallpictureGede = [
-  "https://cdn.discordapp.com/emojis/966116896405606420.gif?size=96&quality=lossless",""
+  "https://cdn.discordapp.com/emojis/966116896405606420.gif?size=96&quality=lossless",
   
                     ];
 const nameButtonone = "";
