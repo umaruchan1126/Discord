@@ -47,6 +47,15 @@ const randomtext3 = [
 
 ];
 
+
+let lastRandomTextIndex = -1;
+
+function getRandomText() {
+  lastRandomTextIndex = (lastRandomTextIndex + 1) % randomtext3.length;
+  return randomtext3[lastRandomTextIndex];
+}
+
+
 const randomtext4 = [
   '★☆★☆★☆★', '☆★☆★☆★☆'
 
@@ -135,6 +144,11 @@ bot.on('ready', async () => {
     const randomButtonText4 = getRandomElement(randomtext4);
     const randomButtonText5 = getRandomElement(randomtext5);
     linkButtonone = getRandomElement(randomLinks);
+
+    const randomXX = getRandomText();
+    
+    const randomButtonText3 = getRandomText();
+    
     const pr = new RichPresence()  
       .setName(`CRAMMING`)
       .setURL('https://www.twitch.tv/sachihirokun')
@@ -152,7 +166,7 @@ bot.on('ready', async () => {
       .addButton(`${randomButtonText}`, `${linkButtonone}`)
       .addButton(`${randomButtonText4}`, `${linkButtonone}`)
     bot.user.setActivity(pr.toJSON());
-  }, getRandomInt(1000, 3000));
+  }, getRandomInt(10000, 3000));
   console.log(`${bot.user.tag} Status is showed up !!`);
 });
 
