@@ -140,14 +140,13 @@ bot.on('ready', async () => {
     rdpictureGede = getRandomElement(pictureGede);
     rdsmallpictureGede = getRandomElement(smallpictureGede);
     const randomButtonText = getRandomElement(randomTexts);
-    const randomButtonText3 = getRandomElement(randomtext3);
+    const randomButtonText3 = getRandomText();
     const randomButtonText4 = getRandomElement(randomtext4);
     const randomButtonText5 = getRandomElement(randomtext5);
     linkButtonone = getRandomElement(randomLinks);
 
     const randomXX = getRandomText();
     
-    const randomButtonText3 = getRandomText();
     
     const pr = new RichPresence()  
       .setName(`CRAMMING`)
