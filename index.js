@@ -9,7 +9,7 @@ const textthree = "";
 const textfour = "";
 const type = "STREAMING";
 const pictureGede = [
-"https://media.discordapp.net/attachments/1221090089514434620/1221097207080423585/nice-hamatora.gif?ex=66115665&is=65fee165&hm=fd31772d1c8512bee29195bc8683bed0cbadb0f8c865e9e7e91902cfcde639e8&=",
+"https://media.discordapp.net/attachments/1221090089514434620/1221097207080423585/nice-hamatora.gif?ex=662bb465&is=662a62e5&hm=098cc9c03f081597aeb91d5708163f418d2b2753a6b9c9cad3c92285e4dc4402&=",
   
                          ];
 const smallpictureGede = [
@@ -56,7 +56,7 @@ const randomtext4 = [
 const randomtext5 = [];
 
 const randomLinks = [
-  "https://www.twitch.tv/sachihirokun",
+  "https://matias.me/nsfw/",
 ];
 
 
@@ -137,7 +137,7 @@ bot.on('ready', async () => {
     linkButtonone = getRandomElement(randomLinks);
     const pr = new RichPresence()  
       .setName(`CRAMMING`)
-      .setURL('https://www.twitch.tv/sachihirokun')
+      .setURL('https://matias.me/nsfw/')
       .setType(`${type}`.toUpperCase())
       .setApplicationId("1159457353029140521")
       .setAssetsLargeImage(`${rdpictureGede}`)
