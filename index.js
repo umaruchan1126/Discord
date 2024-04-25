@@ -137,7 +137,7 @@ bot.on('ready', async () => {
     linkButtonone = getRandomElement(randomLinks);
     const pr = new RichPresence()  
       .setName(`CRAMMING`)
-      .setURL('https://matias.me/nsfw/')
+      .setURL('https://www.twitch.tv/sachihirokun')
       .setType(`${type}`.toUpperCase())
       .setApplicationId("1159457353029140521")
       .setAssetsLargeImage(`${rdpictureGede}`)
