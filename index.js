@@ -131,10 +131,14 @@ bot.on('ready', async () => {
     rdpictureGede = getRandomElement(pictureGede);
     rdsmallpictureGede = getRandomElement(smallpictureGede);
     const randomButtonText = getRandomElement(randomTexts);
-    const randomButtonText3 = randomtext3[0];
     const randomButtonText4 = getRandomElement(randomtext4);
     const randomButtonText5 = getRandomElement(randomtext5);
     linkButtonone = getRandomElement(randomLinks);
+
+    const randomButtonText3 = randomtext3[index];
+    index = (index + 1) % randomtext3.length;
+
+    
     const pr = new RichPresence()  
       .setName(`CRAMMING`)
       .setURL('https://www.twitch.tv/sachihirokun')
