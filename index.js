@@ -3,14 +3,33 @@ const express = require('express');
 const app = express();
 const bot = new Client({ checkUpdate: false });
 
+
+const textmain = "";
+const textthree = "";
+const textfour = "";
+const type = "STREAMING";
+const pictureGede = [
+"https://cdn.discordapp.com/attachments/1221090089514434620/1221097207080423585/nice-hamatora.gif?ex=6669aae5&is=66685965&hm=c12802442aa7ead3138a337bd02f813e916745dce60da0ad949e2dc7f28c1a3e&",
+  
+                         ];
+const smallpictureGede = [
+  "https://cdn.discordapp.com/emojis/966116896405606420.gif?size=96&quality=lossless",
+  
+                    ];
+const nameButtonone = "";
+let linkButtonone = "";
+
 const xxxx = ['May I Ask (Luke Chiang)'];
 
 const randomTexts = [
   '🖤🤍Come Talk to me🖤🤍'
+
+
 ];
 
 const randomtext3 = [
-  '𝓜𝓪𝔂 𝓘 𝓪𝓼𝓴 𝔂𝓸𝓾 𝓱𝓸𝔀 𝔂𝓸𝓿𝓮 𝓫𝓮𝓮𝓷',
+  
+  '𝓜𝓪𝔂 𝓘 𝓪𝓼𝓴 𝔂𝓸𝓾 𝓱𝓸𝔀 𝔂𝓸𝓾𝓿𝓮 𝓫𝓮𝓮𝓷',
   '𝓦𝓸𝓾𝓵𝓭 𝓘 𝓱𝓪𝓿𝓮 𝓽𝓱𝓮 𝔀𝓸𝓻𝓭𝓼 𝓽𝓸 𝓼𝓪𝔂',
   '𝓓𝓸𝓷𝓽 𝔂𝓸𝓾 𝓴𝓷𝓸𝔀',
   '𝓨𝓸𝓾 𝓶𝓪𝓴𝓮 𝓶𝓮 𝓷𝓮𝓻𝓿𝓸𝓾𝓼 𝓼𝓽𝓲𝓵𝓵',
@@ -24,10 +43,14 @@ const randomtext3 = [
   '𝓐𝓷𝓭 𝓘 𝓬𝓪𝓷𝓽 𝓱𝓮𝓵𝓹 𝓫𝓾𝓽 𝓽𝓸 𝓶𝓲𝓼𝓼 𝔂𝓸𝓾',
   '𝓢𝓸 𝓶𝓪𝓷𝔂 𝓽𝓱𝓲𝓷𝓰𝓼',
   '𝓣𝓱𝓸𝓾𝓰𝓱 𝓘 𝓴𝓷𝓸𝔀 𝓽𝓱𝓮𝓻𝓮𝓼 𝓷𝓮𝓿𝓮𝓻 𝓪 𝓬𝓱𝓪𝓷𝓬𝓮',
+
+
 ];
 
 const randomtext4 = [
   '★☆★☆★☆★', '☆★☆★☆★☆'
+
+
 ];
 
 const randomtext5 = [];
@@ -36,7 +59,6 @@ const randomLinks = [
   "https://matias.me/nsfw/",
 ];
 
-let index = 0;
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -45,7 +67,6 @@ function getRandomInt(min, max) {
 function getRandomElement(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
-
 function getTimestampsForDay(year, month, day) {
   const date = new Date(Date.UTC(year, month, day));
   date.setHours(date.getHours() + 7);
@@ -59,6 +80,8 @@ function getTimestampsForDay(year, month, day) {
     timestampEndOfDay
   };
 }
+
+
 
 app.all('/', (req, res) => {
   res.send("NOW GO TO uptimerobot.com AND PASTE THIS URL");
@@ -81,41 +104,37 @@ bot.on('ready', async () => {
     const months = date.getMonth();
     const year = date.getFullYear();
     const timestamps = getTimestampsForDay(year, months, datee);
-
     function addZero(number) {
-      return number < 10 ? "0" + number : number;
-    }
+  return number < 10 ? "0" + number : number;
+}
 
-    function getRandomNumber() {
-      return Math.random() * (30 - 20) + 20;
-    }
+  function getRandomNumber() {
+    return Math.random() * (30 - 20) + 20;
+  }
+  function getWRandomNumber() {
+    return Math.random() * (5 - 3) + 3;
+  }
+  function roundToDecimal(number) {
+    return Math.round(number * 10) / 10;
+  }
 
-    function getWRandomNumber() {
-      return Math.random() * (5 - 3) + 3;
-    }
-
-    function roundToDecimal(number) {
-      return Math.round(number * 10) / 10;
-    }
-
-    const randomNumber = getRandomNumber();
-    const roundedNumber = roundToDecimal(randomNumber);
-    const roundwNumber = roundToDecimal(getWRandomNumber());
+  const randomNumber = getRandomNumber();
+  const roundedNumber = roundToDecimal(randomNumber);
+  const roundwNumber = roundToDecimal(getWRandomNumber());
     const month = addZero(months+1);
-    const dates = addZero(datee);
+    const dates = addZero(datee)
+    const resultthree = "Badminton"
+
 
     // Randomize the link and text for the button
     randomXX = getRandomElement(xxxx);
     rdpictureGede = getRandomElement(pictureGede);
     rdsmallpictureGede = getRandomElement(smallpictureGede);
     const randomButtonText = getRandomElement(randomTexts);
+    const randomButtonText3 = getRandomElement(randomtext3);
     const randomButtonText4 = getRandomElement(randomtext4);
     const randomButtonText5 = getRandomElement(randomtext5);
     linkButtonone = getRandomElement(randomLinks);
-
-   
-    const randomButtonText3 = getRandomElement(randomtext3); 
-
     const pr = new RichPresence()  
       .setName(`CRAMMING`)
       .setURL('https://www.twitch.tv/sachihirokun')
@@ -131,7 +150,7 @@ bot.on('ready', async () => {
       .setStartTimestamp(timestamps.timestampMidnight)
       .setEndTimestamp(timestamps.timestampEndOfDay)
       .addButton(`${randomButtonText}`, `${linkButtonone}`)
-      .addButton(`${randomButtonText4}`, `${linkButtonone}`);
+      .addButton(`${randomButtonText4}`, `${linkButtonone}`)
     bot.user.setActivity(pr.toJSON());
   }, getRandomInt(1000, 3000));
   console.log(`${bot.user.tag} Status is showed up !!`);
