@@ -9,7 +9,7 @@ const textthree = "";
 const textfour = "";
 const type = "STREAMING";
 const pictureGede = [
-"https://media.discordapp.net/attachments/1221090089514434620/1221097207080423585/nice-hamatora.gif?ex=662bb465&is=662a62e5&hm=098cc9c03f081597aeb91d5708163f418d2b2753a6b9c9cad3c92285e4dc4402&=",
+"https://cdn.discordapp.com/attachments/1221090089514434620/1221097207080423585/nice-hamatora.gif?ex=6669aae5&is=66685965&hm=c12802442aa7ead3138a337bd02f813e916745dce60da0ad949e2dc7f28c1a3e&",
   
                          ];
 const smallpictureGede = [
@@ -19,7 +19,7 @@ const smallpictureGede = [
 const nameButtonone = "";
 let linkButtonone = "";
 
-const xxxx = ['The Story of Us (Taylor Swift)'];
+const xxxx = ['May I Ask (Luke Chiang)'];
 
 const randomTexts = [
   '🖤🤍Come Talk to me🖤🤍'
@@ -29,20 +29,20 @@ const randomTexts = [
 
 const randomtext3 = [
   
-  '𝓣𝓱𝓲𝓼 𝓲𝓼 𝓵𝓸𝓸𝓴𝓲𝓷𝓰',
-  '𝓵𝓲𝓴𝓮 𝓪 𝓬𝓸𝓷𝓽𝓮𝓼𝓽',
-  '𝓞𝓯 𝔀𝓱𝓸 𝓬𝓪𝓷 𝓪𝓬𝓽',
-  '𝓵𝓲𝓴𝓮 𝓽𝓱𝓮𝔂 𝓬𝓪𝓻𝓮 𝓵𝓮𝓼𝓼',
-  '𝓑𝓾𝓽 𝓘 𝓵𝓲𝓴𝓮𝓭 𝓲𝓽 𝓫𝓮𝓽𝓽𝓮𝓻',
-  '𝔀𝓱𝓮𝓷 𝔂𝓸𝓾 𝔀𝓮𝓻𝓮 𝓸𝓷 𝓶𝔂 𝓼𝓲𝓭𝓮',
-  '𝓣𝓱𝓮 𝓫𝓪𝓽𝓽𝓵𝓮 𝓼 𝓲𝓷 𝔂𝓸𝓾𝓻 𝓱𝓪𝓷𝓭𝓼 𝓷𝓸𝔀',
-  '𝓑𝓾𝓽 𝓘 𝔀𝓸𝓾𝓵𝓭 𝓵𝓪𝔂 𝓶𝔂 𝓪𝓻𝓶𝓸𝓻 𝓭𝓸𝔀𝓷',
-  '𝓘𝓯 𝔂𝓸𝓾 𝓼𝓪𝔂 𝔂𝓸𝓾 𝓭',
-  '𝓻𝓪𝓽𝓱𝓮𝓻 𝓵𝓸𝓿𝓮 𝓽𝓱𝓪𝓷 𝓯𝓲𝓰𝓱𝓽',
+  '𝓜𝓪𝔂 𝓘 𝓪𝓼𝓴 𝔂𝓸𝓾 𝓱𝓸𝔀 𝔂𝓸𝓾𝓿𝓮 𝓫𝓮𝓮𝓷',
+  '𝓦𝓸𝓾𝓵𝓭 𝓘 𝓱𝓪𝓿𝓮 𝓽𝓱𝓮 𝔀𝓸𝓻𝓭𝓼 𝓽𝓸 𝓼𝓪𝔂',
+  '𝓓𝓸𝓷𝓽 𝔂𝓸𝓾 𝓴𝓷𝓸𝔀',
+  '𝓨𝓸𝓾 𝓶𝓪𝓴𝓮 𝓶𝓮 𝓷𝓮𝓻𝓿𝓸𝓾𝓼 𝓼𝓽𝓲𝓵𝓵',
+  '𝓨𝓸𝓾 𝓹𝓾𝓵𝓵 𝓶𝔂 𝓽𝓱𝓸𝓾𝓰𝓱𝓽𝓼 𝓪𝓹𝓪𝓻𝓽',
+  '𝓣𝓱𝓸𝓾𝓰𝓱 𝓘𝓿𝓮 𝓫𝓮𝓮𝓷 𝓽𝓻𝔂𝓷𝓪 𝓰𝓮𝓽 𝔂𝓸𝓾 𝓸𝓯𝓯 𝓶𝔂 𝓶𝓲𝓷𝓭',
+  '𝓖𝓲𝓿𝓮 𝓶𝓮 𝓽𝓲𝓶𝓮',
+  '𝓒𝓪𝓾𝓼𝓮 𝓲𝓽 𝓼𝓽𝓲𝓵𝓵 𝓫𝓾𝓻𝓷𝓼 𝓶𝔂 𝓵𝓲𝓹𝓼',
+  '𝓣𝓸 𝓼𝓪𝔂 𝔂𝓸𝓾𝓻 𝓷𝓪𝓶𝓮 𝓸𝓾𝓽 𝓵𝓸𝓾𝓭, 𝓶𝔂 𝓵𝓸𝓿𝓮',
+  '𝓘𝓽𝓼 𝓳𝓾𝓼𝓽 𝓶𝔂 𝓷𝓪𝓽𝓾𝓻𝓪𝓵 𝓻𝓮𝓪𝓬𝓽𝓲𝓸𝓷 𝓽𝓸 𝔂𝓸𝓾',
+  '𝓜𝓪𝓴𝓲𝓷𝓰 𝓶𝓮 𝓯𝓮𝓮𝓵 𝓵𝓲𝓴𝓮 𝓘𝓿𝓮 𝓵𝓸𝓼𝓽 𝓼𝓪𝓷𝓲𝓽𝔂',
+  '𝓐𝓷𝓭 𝓘 𝓬𝓪𝓷𝓽 𝓱𝓮𝓵𝓹 𝓫𝓾𝓽 𝓽𝓸 𝓶𝓲𝓼𝓼 𝔂𝓸𝓾',
   '𝓢𝓸 𝓶𝓪𝓷𝔂 𝓽𝓱𝓲𝓷𝓰𝓼',
-  '𝓽𝓱𝓪𝓽 𝔂𝓸𝓾 𝔀𝓲𝓼𝓱 𝓘 𝓴𝓷𝓮𝔀',
-  '𝓑𝓾𝓽 𝓽𝓱𝓮 𝓼𝓽𝓸𝓻𝔂 𝓸𝓯 𝓾𝓼',
-  '𝓶𝓲𝓰𝓱𝓽 𝓫𝓮 𝓮𝓷𝓭𝓲𝓷𝓰 𝓼𝓸𝓸𝓷',
+  '𝓣𝓱𝓸𝓾𝓰𝓱 𝓘 𝓴𝓷𝓸𝔀 𝓽𝓱𝓮𝓻𝓮𝓼 𝓷𝓮𝓿𝓮𝓻 𝓪 𝓬𝓱𝓪𝓷𝓬𝓮',
 
 
 ];
