@@ -61,99 +61,86 @@ const randomLinks = [
 
 
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function getRandomElement(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
+    return arr[Math.floor(Math.random() * arr.length)];
 }
+
 function getTimestampsForDay(year, month, day) {
-  const date = new Date(Date.UTC(year, month, day));
-  date.setHours(date.getHours() + 7);
-  date.setUTCHours(0, 0, 0, 0);
-  const timestampMidnight = date.getTime();
-  date.setUTCHours(23, 59, 59, 999);
-  const timestampEndOfDay = date.getTime();
+    const date = new Date(Date.UTC(year, month, day));
+    date.setHours(date.getHours() + 7);
+    date.setUTCHours(0, 0, 0, 0);
+    const timestampMidnight = date.getTime();
+    date.setUTCHours(23, 59, 59, 999);
+    const timestampEndOfDay = date.getTime();
 
-  return {
-    timestampMidnight,
-    timestampEndOfDay
-  };
+    return {
+        timestampMidnight,
+        timestampEndOfDay
+    };
 }
-
-
 
 app.all('/', (req, res) => {
-  res.send("NOW GO TO uptimerobot.com AND PASTE THIS URL");
+    res.send("NOW GO TO uptimerobot.com AND PASTE THIS URL");
 });
 
 app.listen(8080, () => {
-  console.log("Server is ready!!");
+    console.log("Server is ready!!");
 });
 
 bot.on('debug', (a) => {
-  if (a.startsWith("Hit a 429")) process.kill(1);
+    if (a.startsWith("Hit a 429")) process.kill(1);
 });
 
 bot.on('ready', async () => {
-  setInterval(() => {
-    const date = new Date();
-    const datee = date.getDate();
-    const hours = (date.getHours() + 7) % 24;
-    const minutes = date.getMinutes();
-    const months = date.getMonth();
-    const year = date.getFullYear();
-    const timestamps = getTimestampsForDay(year, months, datee);
-    function addZero(number) {
-  return number < 10 ? "0" + number : number;
-}
+    // Define the counter variable
+    let buttonTextIndex = 0;
 
-  function getRandomNumber() {
-    return Math.random() * (30 - 20) + 20;
-  }
-  function getWRandomNumber() {
-    return Math.random() * (5 - 3) + 3;
-  }
-  function roundToDecimal(number) {
-    return Math.round(number * 10) / 10;
-  }
+    setInterval(() => {
+        const date = new Date();
+        const datee = date.getDate();
+        const hours = (date.getHours() + 7) % 24;
+        const minutes = date.getMinutes();
+        const months = date.getMonth();
+        const year = date.getFullYear();
+        const timestamps = getTimestampsForDay(year, months, datee);
 
-  const randomNumber = getRandomNumber();
-  const roundedNumber = roundToDecimal(randomNumber);
-  const roundwNumber = roundToDecimal(getWRandomNumber());
-    const month = addZero(months+1);
-    const dates = addZero(datee)
-    const resultthree = "Badminton"
+        const randomNumber = Math.random() * (30 - 20) + 20;
+        const roundwNumber = Math.random() * (5 - 3) + 3;
 
+        const randomXX = getRandomElement(xxxx);
+        const rdpictureGede = getRandomElement(pictureGede);
+        const rdsmallpictureGede = getRandomElement(smallpictureGede);
+        const randomButtonText = getRandomElement(randomTexts);
+        const randomButtonText4 = getRandomElement(randomtext4);
+        const randomButtonText5 = getRandomElement(randomtext5);
+        const linkButtonone = getRandomElement(randomLinks);
 
-    // Randomize the link and text for the button
-    randomXX = getRandomElement(xxxx);
-    rdpictureGede = getRandomElement(pictureGede);
-    rdsmallpictureGede = getRandomElement(smallpictureGede);
-    const randomButtonText = getRandomElement(randomTexts);
-    const randomButtonText3 = getRandomElement(randomtext3);
-    const randomButtonText4 = getRandomElement(randomtext4);
-    const randomButtonText5 = getRandomElement(randomtext5);
-    linkButtonone = getRandomElement(randomLinks);
-    const pr = new RichPresence()  
-      .setName(`CRAMMING`)
-      .setURL('https://www.twitch.tv/sachihirokun')
-      .setType(`${type}`.toUpperCase())
-      .setApplicationId("1159457353029140521")
-      .setAssetsLargeImage(`${rdpictureGede}`)
-      .setAssetsSmallImage(`${rdsmallpictureGede}`)
-      .setAssetsLargeText(`
-🌡${roundedNumber} °C ⋆ 🍃 ${roundwNumber} m/s`)
-      .setAssetsSmallText(`ping: ${bot.ws.ping}ms`)
-      .setState(`: ${randomXX}`)
-      .setDetails(`${randomButtonText3}`)
-      .setStartTimestamp(timestamps.timestampMidnight)
-      .setEndTimestamp(timestamps.timestampEndOfDay)
-      .addButton(`${randomButtonText}`, `${linkButtonone}`)
-      .addButton(`${randomButtonText4}`, `${linkButtonone}`)
-    bot.user.setActivity(pr.toJSON());
-  }, getRandomInt(1000, 3000));
-  console.log(`${bot.user.tag} Status is showed up !!`);
+        // Increment the counter and loop back to 0 if necessary
+        buttonTextIndex = (buttonTextIndex + 1) % randomtext3.length;
+        const randomButtonText3 = randomtext3[buttonTextIndex];
+
+        const pr = new RichPresence()
+            .setName(`CRAMMING`)
+            .setURL('https://www.twitch.tv/sachihirokun')
+            .setType(type.toUpperCase())
+            .setApplicationId("1159457353029140521")
+            .setAssetsLargeImage(rdpictureGede)
+            .setAssetsSmallImage(rdsmallpictureGede)
+            .setAssetsLargeText(`🌡${randomNumber.toFixed(1)} °C ⋆ 🍃 ${roundwNumber.toFixed(1)} m/s`)
+            .setAssetsSmallText(`ping: ${bot.ws.ping}ms`)
+            .setState(`: ${randomXX}`)
+            .setDetails(randomButtonText3)
+            .setStartTimestamp(timestamps.timestampMidnight)
+            .setEndTimestamp(timestamps.timestampEndOfDay)
+            .addButton(randomButtonText, linkButtonone)
+            .addButton(randomButtonText4, linkButtonone);
+
+        bot.user.setActivity(pr.toJSON());
+    }, getRandomInt(1000, 3000));
+    console.log(`${bot.user.tag} Status is showed up !!`);
 });
 
 bot.login(process.env['TOKEN']);
