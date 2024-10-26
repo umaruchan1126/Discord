@@ -1,15 +1,18 @@
 {
-  "name": "skibidi",
+  "name": "Streaming-24-7-RPC",
   "version": "1.0.0",
-  "description": "A Discord selfbot for displaying rich presence using skibidi roblox tycoon.",
+  "description": "Allows you to keep your account status as streaming. It also allows you to set a gif link as your image in your rpc and have 2 buttons. It is fully customizable!",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "zensware",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "@types/node": "^18.0.6",
     "discord.js-selfbot-v13": "^2.10.1",
-    "express": "^4.17.2"
+    "express": "^4.18.2",
+    "node-fetch": "^3.2.6"
   }
 }
