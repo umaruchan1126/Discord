@@ -1,146 +1,99 @@
-const { Client, RichPresence } = require('discord.js-selfbot-v13');
 const express = require('express');
+const Discord = require('discord.js-selfbot-v13');
+
+const client = new Discord.Client({
+  readyStatus: false, // Disables ready status messages
+  checkUpdate: false  // Disables automatic updates checks
+});
+
 const app = express();
-const bot = new Client({ checkUpdate: false });
+const port = process.env.PORT || 3000;
+
+const Authorization_Token = process.env.Authorization_Token;
+const Webhook_ID = process.env.Webhook_ID;
+const Webhook_Token = process.env.Webhook_Token;
+
+let Webhook_Support = true;
+
+client.on('ready', async () => {
+  console.clear();
+  console.log(`zensware.rpc has connected to Discord Client: ${client.user.tag}`);
 
 
-const textmain = "";
-const textthree = "";
-const textfour = "";
-const type = "STREAMING";
-const pictureGede = [
-"https://cdn.discordapp.com/attachments/1221090089514434620/1267775876918153308/5A0DE3F5-5BB6-4881-9CA2-38ED6D3F9ABF.gif?ex=66aa03cb&is=66a8b24b&hm=e29559fe975e8549705a759dc1410a1b9f8c82364ad4c2f24e0945f9d8950c41&",
-  
-                         ];
-const smallpictureGede = [
-  "https://cdn.discordapp.com/emojis/966116896405606420.gif?size=96&quality=lossless",
-  
-                    ];
-const nameButtonone = "";
-let linkButtonone = "";
+  const sendWebhookMessage = () => {
+    if (Webhook_Support) {
+      const embed = new Discord.MessageEmbed()
+        .setColor('#545759')
+        .setTitle('zensware.rpc | Webhook Logs')
+        .setDescription('Our recent update has included "Render.com" hosting with our old functionalities.')
+        .addFields(
+          { name: 'Discord Client:', value: client.user.tag, inline: true },
+          { name: 'Client Uptime:', value: calculateUptime(), inline: true }
+        )
+        .setThumbnail("https://media.discordapp.net/attachments/1206955445940658287/1223021688971591770/zenith-grey.png?ex=661856b5&is=6605e1b5&hm=0c0699c469634dda8ce20ceb6d31d5cfd8e62005aafe78acae73edae47a3b530&=&format=webp&quality=lossless&width=600&height=450")
+        .setFooter({ text: '・Developer: zensware', iconURL: client.user.displayAvatarURL() })
+        .setTimestamp();
 
-const xxxx = ['May I Ask (Luke Chiang)'];
+      const webhookClient = new Discord.WebhookClient({ id: Webhook_ID, token: Webhook_Token });
+      webhookClient.send({ embeds: [embed] })
+        .then(() => console.log('Embed sent successfully!'))
+        .catch(console.error);
+    }
+  };
 
-const randomTexts = [
-  '🖤🤍Come Talk to me🖤🤍'
+  const calculateUptime = () => {
+    const currentTime = Date.now();
+    const uptime = currentTime - client.readyAt;
+    const formattedUptime = formatMilliseconds(uptime);
+    return formattedUptime;
+  };
 
+  const formatMilliseconds = (milliseconds) => {
+    const seconds = Math.floor((milliseconds / 1000) % 60);
+    const minutes = Math.floor((milliseconds / (1000 * 60)) % 60);
+    const hours = Math.floor((milliseconds / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(milliseconds / (1000 * 60 * 60 * 24));
 
-];
+    return `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+  };
 
-const randomtext3 = [
-  
-  '𝓜𝓪𝔂 𝓘 𝓪𝓼𝓴 𝔂𝓸𝓾 𝓱𝓸𝔀 𝔂𝓸𝓾𝓿𝓮 𝓫𝓮𝓮𝓷',
-  '𝓦𝓸𝓾𝓵𝓭 𝓘 𝓱𝓪𝓿𝓮 𝓽𝓱𝓮 𝔀𝓸𝓻𝓭𝓼 𝓽𝓸 𝓼𝓪𝔂',
-  '𝓓𝓸𝓷𝓽 𝔂𝓸𝓾 𝓴𝓷𝓸𝔀',
-  '𝓨𝓸𝓾 𝓶𝓪𝓴𝓮 𝓶𝓮 𝓷𝓮𝓻𝓿𝓸𝓾𝓼 𝓼𝓽𝓲𝓵𝓵',
-  '𝓨𝓸𝓾 𝓹𝓾𝓵𝓵 𝓶𝔂 𝓽𝓱𝓸𝓾𝓰𝓱𝓽𝓼 𝓪𝓹𝓪𝓻𝓽',
-  '𝓣𝓱𝓸𝓾𝓰𝓱 𝓘𝓿𝓮 𝓫𝓮𝓮𝓷 𝓽𝓻𝔂𝓷𝓪 𝓰𝓮𝓽 𝔂𝓸𝓾 𝓸𝓯𝓯 𝓶𝔂 𝓶𝓲𝓷𝓭',
-  '𝓖𝓲𝓿𝓮 𝓶𝓮 𝓽𝓲𝓶𝓮',
-  '𝓒𝓪𝓾𝓼𝓮 𝓲𝓽 𝓼𝓽𝓲𝓵𝓵 𝓫𝓾𝓻𝓷𝓼 𝓶𝔂 𝓵𝓲𝓹𝓼',
-  '𝓣𝓸 𝓼𝓪𝔂 𝔂𝓸𝓾𝓻 𝓷𝓪𝓶𝓮 𝓸𝓾𝓽 𝓵𝓸𝓾𝓭, 𝓶𝔂 𝓵𝓸𝓿𝓮',
-  '𝓘𝓽𝓼 𝓳𝓾𝓼𝓽 𝓶𝔂 𝓷𝓪𝓽𝓾𝓻𝓪𝓵 𝓻𝓮𝓪𝓬𝓽𝓲𝓸𝓷 𝓽𝓸 𝔂𝓸𝓾',
-  '𝓜𝓪𝓴𝓲𝓷𝓰 𝓶𝓮 𝓯𝓮𝓮𝓵 𝓵𝓲𝓴𝓮 𝓘𝓿𝓮 𝓵𝓸𝓼𝓽 𝓼𝓪𝓷𝓲𝓽𝔂',
-  '𝓐𝓷𝓭 𝓘 𝓬𝓪𝓷𝓽 𝓱𝓮𝓵𝓹 𝓫𝓾𝓽 𝓽𝓸 𝓶𝓲𝓼𝓼 𝔂𝓸𝓾',
-  '𝓢𝓸 𝓶𝓪𝓷𝔂 𝓽𝓱𝓲𝓷𝓰𝓼',
-  '𝓣𝓱𝓸𝓾𝓰𝓱 𝓘 𝓴𝓷𝓸𝔀 𝓽𝓱𝓮𝓻𝓮𝓼 𝓷𝓮𝓿𝓮𝓻 𝓪 𝓬𝓱𝓪𝓷𝓬𝓮',
+  const updateRichPresence = () => {
+    try {
+      // Create a new Rich Presence object
+      const r = new Discord.RichPresence()
+        .setApplicationId('1023269983922442373') // Replace '123' with your actual Application ID
+        .setType('WATCHING')
+        .setURL('https://www.twitch.tv/zensware') // Must be a valid YouTube or Twitch URL
+        .setState(null)
+        .setName('zensware')
+        .setDetails('zensware') // Details without time
+        .setStartTimestamp(Date.now())
+        .setAssetsLargeImage('https://media.discordapp.net/attachments/1206955445940658287/1277834158152093696/200w.gif?ex=66d13e4c&is=66cfeccc&hm=87ebbdc2e7504ed039106ce9d97663328902a13b5f389f99a5bed24fa7f65ecb&=&width=150&height=150') // Large image link
+        .setAssetsLargeText(null) // Text when you hover over the large image
+        .setAssetsSmallImage(null) // Small image link
+        .setAssetsSmallText(null) // Text when you hover over the small image
+        .addButton('My portfolio', 'https://www.zensware.com/'); // Button with URL
 
+      client.user.setActivity(r);
+      client.user.setPresence({ status: "idle" }); // Set user status to 'Do Not Disturb'
 
-];
+      console.log('Rich Presence updated successfully!');
+    } catch (error) {
+      console.error('Error updating Rich Presence:', error.message);
+    }
+  };
 
-const randomtext4 = [
-  '★☆★☆★☆★', '☆★☆★☆★☆'
+  updateRichPresence();
 
-
-];
-
-const randomtext5 = [];
-
-const randomLinks = [
-  "https://matias.me/nsfw/",
-];
-
-
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function getRandomElement(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-}
-
-function getTimestampsForDay(year, month, day) {
-    const date = new Date(Date.UTC(year, month, day));
-    date.setHours(date.getHours() + 7);
-    date.setUTCHours(0, 0, 0, 0);
-    const timestampMidnight = date.getTime();
-    date.setUTCHours(23, 59, 59, 999);
-    const timestampEndOfDay = date.getTime();
-
-    return {
-        timestampMidnight,
-        timestampEndOfDay
-    };
-}
-
-app.all('/', (req, res) => {
-    res.send("NOW GO TO uptimerobot.com AND PASTE THIS URL");
+  setInterval(updateRichPresence, 30000); // Update every 30 seconds
 });
 
-app.listen(8080, () => {
-    console.log("Server is ready!!");
+client.login(Authorization_Token).catch(console.error);
+
+app.get('/', (req, res) => {
+  res.send('zensware.rpc is running!');
 });
 
-bot.on('debug', (a) => {
-    if (a.startsWith("Hit a 429")) process.kill(1);
+app.listen(port, () => {
+  console.log(`Express server is running on port ${port}`);
 });
-
-bot.on('ready', async () => {
-    // Define the counter variable
-    let buttonTextIndex = 0;
-
-    setInterval(() => {
-        const date = new Date();
-        const datee = date.getDate();
-        const hours = (date.getHours() + 7) % 24;
-        const minutes = date.getMinutes();
-        const months = date.getMonth();
-        const year = date.getFullYear();
-        const timestamps = getTimestampsForDay(year, months, datee);
-
-        const randomNumber = Math.random() * (30 - 20) + 20;
-        const roundwNumber = Math.random() * (5 - 3) + 3;
-
-        const randomXX = getRandomElement(xxxx);
-        const rdpictureGede = getRandomElement(pictureGede);
-        const rdsmallpictureGede = getRandomElement(smallpictureGede);
-        const randomButtonText = getRandomElement(randomTexts);
-        const randomButtonText4 = getRandomElement(randomtext4);
-        const randomButtonText5 = getRandomElement(randomtext5);
-        const linkButtonone = getRandomElement(randomLinks);
-
-        // Increment the counter and loop back to 0 if necessary
-        buttonTextIndex = (buttonTextIndex + 1) % randomtext3.length;
-        const randomButtonText3 = randomtext3[buttonTextIndex];
-
-        const pr = new RichPresence()
-            .setName(`CRAMMING`)
-            .setURL('https://www.twitch.tv/sachihirokun')
-            .setType(type.toUpperCase())
-            .setApplicationId("1159457353029140521")
-            .setAssetsLargeImage(rdpictureGede)
-            .setAssetsSmallImage(rdsmallpictureGede)
-            .setAssetsLargeText(`🌡${randomNumber.toFixed(1)} °C ⋆ 🍃 ${roundwNumber.toFixed(1)} m/s`)
-            .setAssetsSmallText(`ping: ${bot.ws.ping}ms`)
-            .setState(`: ${randomXX}`)
-            .setDetails(randomButtonText3)
-            .setStartTimestamp(timestamps.timestampMidnight)
-            .setEndTimestamp(timestamps.timestampEndOfDay)
-            .addButton(randomButtonText, linkButtonone)
-            .addButton(randomButtonText4, linkButtonone);
-
-        bot.user.setActivity(pr.toJSON());
-    }, getRandomInt(1000, 3000));
-    console.log(`${bot.user.tag} Status is showed up !!`);
-});
-
-bot.login(process.env['TOKEN']);
