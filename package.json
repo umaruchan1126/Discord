@@ -4,8 +4,6 @@
   "description": "Allows you to keep your account status as streaming. It also allows you to set a gif link as your image in your rpc and have 2 buttons. It is fully customizable!",
   "main": "index.js",
   "scripts": {
-     "start": "node build/app.js",
-    "another-script": "you get the idea"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
