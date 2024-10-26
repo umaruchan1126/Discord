@@ -61,21 +61,21 @@ client.on('ready', async () => {
     try {
       // Create a new Rich Presence object
       const r = new Discord.RichPresence()
-        .setApplicationId('1023269983922442373') // Replace '123' with your actual Application ID
+        .setApplicationId('1159457353029140521') // Replace '123' with your actual Application ID
         .setType('WATCHING')
-        .setURL('https://www.twitch.tv/zensware') // Must be a valid YouTube or Twitch URL
+        .setURL('https://www.twitch.tv/sachihirokun') // Must be a valid YouTube or Twitch URL
         .setState(null)
-        .setName('zensware')
-        .setDetails('zensware') // Details without time
+        .setName('ChunChun')
+        .setDetails('ChunChun') // Details without time
         .setStartTimestamp(Date.now())
         .setAssetsLargeImage('https://media.discordapp.net/attachments/1206955445940658287/1277834158152093696/200w.gif?ex=66d13e4c&is=66cfeccc&hm=87ebbdc2e7504ed039106ce9d97663328902a13b5f389f99a5bed24fa7f65ecb&=&width=150&height=150') // Large image link
-        .setAssetsLargeText(null) // Text when you hover over the large image
-        .setAssetsSmallImage(null) // Small image link
-        .setAssetsSmallText(null) // Text when you hover over the small image
-        .addButton('My portfolio', 'https://www.zensware.com/'); // Button with URL
+        .setAssetsLargeText(`🌡${randomNumber.toFixed(1)} °C ⋆ 🍃 ${roundwNumber.toFixed(1)} m/s`) // Text when you hover over the large image
+        .setAssetsSmallImage('https://cdn.discordapp.com/emojis/966116896405606420.gif?size=96&quality=lossless') // Small image link
+        .setAssetsSmallText(`ping: ${bot.ws.ping}ms`) // Text when you hover over the small image
+        .addButton('★☆★☆★☆★' , '☆★☆★☆★☆', 'https://matias.me/nsfw/'); // Button with URL
 
       client.user.setActivity(r);
-      client.user.setPresence({ status: "idle" }); // Set user status to 'Do Not Disturb'
+      client.user.setPresence({ status: "dnd" }); // Set user status to 'Do Not Disturb'
 
       console.log('Rich Presence updated successfully!');
     } catch (error) {
